@@ -1,6 +1,6 @@
 <template>
     <div style="background: red;" @click="show">
-        bar vuex数据
+        bar vuex数据 {{$store.state.username}}
     </div>
 </template>
 
@@ -8,6 +8,9 @@
     export default {
         asyncData({ store }) {
             return store.dispatch('set_username');
+        },
+        mounted() {
+            this.$store.dispatch('set_username');
         },
         methods: {
             show() {

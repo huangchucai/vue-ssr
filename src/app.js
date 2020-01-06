@@ -8,7 +8,8 @@ export default () => {
     const store = createVuex();
     const app = new Vue({
         render: (h) => h(App),
-        router
+        router,
+        store
     });
     return { app, router, store };
 }

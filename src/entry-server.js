@@ -7,8 +7,9 @@ export default (context) => {
     return new Promise(((resolve, reject) => {
         let { app, router, store } = createApp();
         router.push(context.url); // 跳转到指定路由
+        console.log(context.url);
         router.onReady(() => {
-            // console.log(context.url);
+            console.log(context.url);
             const matchedComponents = router.getMatchedComponents();
             console.log(matchedComponents);
             // 匹配不到的路由，执行 reject 函数，并返回 404
@@ -21,7 +22,8 @@ export default (context) => {
                     return component.asyncData({ store });
                 }
             })).then(() => {
-                context.state = store.state
+                context.state = store.state;
+                console.log('fff');
                 resolve(app);
             }).catch((e) => {
                 console.log(e);

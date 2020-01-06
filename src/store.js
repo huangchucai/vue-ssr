@@ -25,5 +25,9 @@ export default () => {
         }
     });
 
+    if (typeof window === 'object' && window.__INITIAL_STATE__) {
+        console.log('aaa');
+        store.replaceState(window.__INITIAL_STATE__);
+    }
     return store;
 }
