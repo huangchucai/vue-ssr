@@ -1,0 +1,41 @@
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
+module.exports = {
+    mode: 'production',
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, '../dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: [
+                            '@babel/plugin-syntax-dynamic-import',
+                            '@babel/plugin-transform-runtime',
+                            'add-module-exports'
+                        ]
+
+                    }
+                },
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.vue$/,
+                use: ['vue-loader']
+            },
+            {
+                test: /\.css$/,
+                use: ['vue-style-loader', 'css-loader']
+            }
+        ]
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
+};
