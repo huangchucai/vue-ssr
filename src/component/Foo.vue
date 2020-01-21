@@ -5,5 +5,10 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        metaInfo: {
+            title: 'Foo组件',
+        }
+    }
+
 </script>

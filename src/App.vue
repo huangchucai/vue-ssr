@@ -10,7 +10,13 @@
 
 <script>
     export default {
+        metaInfo: {
+            title: 'My Awesome Webapp',
+        },
         components: {
+        },
+        mounted() {
+            console.log(window.performance.timeOrigin);
         }
     }
 </script>

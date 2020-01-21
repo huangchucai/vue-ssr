@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default () => {
     const store = new Vuex.Store({
         state: {
-            username: 'jw'
+            username: 'yx'
         },
         mutations: {
             set_username(state) {
@@ -26,7 +26,6 @@ export default () => {
     });
 
     if (typeof window === 'object' && window.__INITIAL_STATE__) {
-        console.log('aaa');
         store.replaceState(window.__INITIAL_STATE__);
     }
     return store;
