@@ -30,5 +30,4 @@ export default (context) => {
             // Promise 应该 resolve 应用程序实例，以便它可以渲染
         });
     }));
-
 }
